@@ -15,7 +15,7 @@ submitButton.addEventListener('click', (e) => {
         resultElement.textContent = `You are eligible for our insurance! Your premium is: ${premium} kr`;
         console.log('you are eligible');
   } else {
-   
+    console.log('test');
     resultNotEligible.textContent = `Please contact us to discuss your insurance options`;
     triggerRule(); // call the function when income is less than 45 000 kr
 
