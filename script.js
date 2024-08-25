@@ -34,5 +34,5 @@ function triggerRule() {
 });
 if(module.hot){
   module.hot.accept();
-}
+};
 
