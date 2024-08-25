@@ -1,9 +1,8 @@
-const isuranceForm = document.getElementById('insurance-form');
+const insuranceForm = document.getElementById('insurance-form');
 const incomeInput = document.getElementById('income');
 const submitButton = document.getElementById('submit');
 const resultElement = document.getElementById('result');
 const resultNotEligible = document.getElementById('result');
-
 
 document.addEventListener("DOMContentLoaded", function(){
 submitButton.addEventListener('click', (e) => {
