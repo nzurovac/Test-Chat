@@ -16,23 +16,24 @@ document.addEventListener("DOMContentLoaded", function(){
       console.log('You are eligible');
     } else {
       resultNotEligible.textContent = `Please contact us to discuss your insurance options`;
-      triggerRule();
+      resultNotEligible.classList.remove('hidden');
+      resultElement.classList.add('hidden');
+      triggerRule(); // Call the function when income is less than 45,000 kr
     }
+  });
 });
+
 function calculatePremium(income) {
-  // TO DO: implement the premium calculation logic here
-  // for now, let's assume it's a sumple percentage of the income
+  // Simple premium calculation logic
   return income * 0.05;
 }
 
-// TO DO: implement the triggerRule function here
 function triggerRule() {
-  // this function shall be called when the income is less than 45,000kr
-  // for now, let's just log a message to the console
+  // This function is called when the income is less than 45,000 kr
   console.log('Not Eligible for insurance');
+  // Additional logic can be added here
 }
-});
-if(module.hot){
-  module.hot.accept();
-};
 
+if (module.hot) {
+  module.hot.accept();
+}
