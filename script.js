@@ -1,24 +1,23 @@
-//const insuranceForm = document.getElementById('insurance-form');
+const insuranceForm = document.getElementById('insurance-form');
 const incomeInput = document.getElementById('income');
 const submitButton = document.getElementById('submit');
 const resultElement = document.getElementById('result');
-const resultNotEligible = document.getElementById('result');
+const resultNotEligible = document.getElementById('result-not-eligible');
 
 document.addEventListener("DOMContentLoaded", function(){
-submitButton.addEventListener('click', (e) => {
-  e.preventDefault();
-  const income = parseInt(incomeInput.value.trim(), 10);
-  if (income >= 45000) {
-    const premium = calculatePremium(income);
-        resultElement.textContent = `You are eligible for our insurance! Your premium is: ${premium} kr`;
-        console.log('you are eligible');
-  } else {
-    console.log('test');
-    resultNotEligible.textContent = `Please contact us to discuss your insurance options`;
-    triggerRule(); // call the function when income is less than 45 000 kr
-
-    
-  }
+  submitButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    const income = parseInt(incomeInput.value.trim(), 10);
+    if (income >= 45000) {
+      const premium = calculatePremium(income);
+      resultElement.textContent = `You are eligible for our insurance! Your premium is: ${premium} kr`;
+      resultElement.classList.remove('hidden');
+      resultNotEligible.classList.add('hidden');
+      console.log('You are eligible');
+    } else {
+      resultNotEligible.textContent = `Please contact us to discuss your insurance options`;
+      triggerRule();
+    }
 });
 });
 function calculatePremium(income) {
@@ -32,9 +31,9 @@ function triggerRule() {
   // this function shall be called when the income is less than 45,000kr
   // for now, let's just log a message to the console
   console.log('Not Eligible for insurance');
-};
-
+}
 
 if(module.hot){
   module.hot.accept();
-};
+}
+

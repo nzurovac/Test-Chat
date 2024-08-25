@@ -1,38 +1,34 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Puzzel Chat Example</title>
-   <img src="https://demo.puzzel.com/webengage/testyourconfig/logo.png"/>
-</style>
-</head><body>
-<h1 id="insurance-form"></h1>
-<input id="income" type="text" placeholder="Enter Your Income Here">
-<button id="submit">SUBMIT</button>
-<br>
-<span id="result"></span>
-<div id="puzzel-chat-container"></div>
-  <script>
-    console.log('Pre script log');
-    (function (a, b) {      
-        var loader = a.createElement('script');
-        loader.type = 'text/javascript';
-        loader.src = 'https://app-cdn.puzzel.com/public/js/pzl_loader.js';
-        loader.setAttribute('id', 'pzlModuleLoader');
-        loader.setAttribute('data-customer-id', b);
-        loader.setAttribute('data-module', 'chat');
-        loader.setAttribute('data-callback', 'puzzelChatCallback');
-        a.body.append(loader);
-    })(document, '90061');
-
-    function puzzelChatCallback() {
-        console.log('Puzzel chat callback executed');
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Puzzel Test Chat</title>
+  <style>
+    .hidden {
+      display: none;
     }
-</script>
-
+  </style>
+</head>
+<body>
+  <form id="insurance-form">
+    <label for="income">Income</label>
+    <input type="number" id="income" name="income">
+    <button type="submit" id="submit">Submit </button>
+  </form>
+  <div id="result" class="hidden"></div>
+  <div id="result-not-eligible" class="hidden"></div>
+  <script type="text/javascript">
+    (function (a, b) {      
+      var loader = a.createElement('script');
+      loader.type = 'text/javascript';
+      loader.src = 'https://app-cdn.puzzel.com/public/js/pzl_loader.js';
+      loader.setAttribute('id', 'pzlModuleLoader');
+      loader.setAttribute('data-customer-id', b);
+      a.body.append(loader);
+    })(document, '90061');
+  </script>
   <script src="script.js"></script>
 </body>
-</head>
 </html>
 
