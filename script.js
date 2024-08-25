@@ -1,4 +1,4 @@
-const insuranceForm = document.getElementById('insurance-form');
+//const insuranceForm = document.getElementById('insurance-form');
 const incomeInput = document.getElementById('income');
 const submitButton = document.getElementById('submit');
 const resultElement = document.getElementById('result');
@@ -6,7 +6,7 @@ const resultNotEligible = document.getElementById('result');
 
 document.addEventListener("DOMContentLoaded", function(){
 submitButton.addEventListener('click', (e) => {
-  e.preventDefault(); // prevent form submission
+  e.preventDefault();
   const income = parseInt(incomeInput.value.trim(), 10);
   if (income >= 45000) {
     const premium = calculatePremium(income);
