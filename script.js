@@ -1,4 +1,4 @@
-const form = document.getElementById('insurance-form');
+const form = document.getElementById('form');
 const incomeInput = document.getElementById('income');
 const submitButton = document.getElementById('submit');
 const resultElement = document.getElementById('result');
