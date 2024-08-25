@@ -19,7 +19,6 @@ document.addEventListener("DOMContentLoaded", function(){
       triggerRule();
     }
 });
-});
 function calculatePremium(income) {
   // TO DO: implement the premium calculation logic here
   // for now, let's assume it's a sumple percentage of the income
@@ -32,7 +31,7 @@ function triggerRule() {
   // for now, let's just log a message to the console
   console.log('Not Eligible for insurance');
 }
-
+});
 if(module.hot){
   module.hot.accept();
 }
