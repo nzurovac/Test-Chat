@@ -1,4 +1,4 @@
-const form = document.getElementById('form');
+const isuranceForm = document.getElementById('insurance-form');
 const incomeInput = document.getElementById('income');
 const submitButton = document.getElementById('submit');
 const resultElement = document.getElementById('result');
@@ -11,7 +11,6 @@ submitButton.addEventListener('click', (e) => {
   const income = parseInt(incomeInput.value.trim(), 10);
   if (income >= 45000) {
     const premium = calculatePremium(income);
-      
         resultElement.textContent = `You are eligible for our insurance! Your premium is: ${premium} kr`;
         console.log('you are eligible');
   } else {
