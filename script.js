@@ -22,15 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
       resultNotEligible.textContent = `Please contact us to discuss your insurance options`;
       resultNotEligible.classList.remove('hidden');      
       resultElement.classList.add('hidden'); 
-     pzl.api.triggerRule({
-         ruleId: '5ef4eca5-753c-4959-ad71-3d7a7db7c559',
-        force: true,
-        customOutcomeProps: {
-          details: {
-            queueKey: 'chat_support'
-          }
-        }
-      });
+      triggerPriceNotCalculated();
     }}
 
   // ...
@@ -38,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
  function triggerRegularChat() {
     // Function to trigger regular chat
     pzl.api.triggerRule({
-      ruleId: 'eb1d1fb4-4547-4576-bbbe-5284c7ad88c2', 
+      ruleId: '', 
       force: true,
       customOutcomeProps: {
         details: {
@@ -48,11 +40,11 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 
-  /* function triggerPriceNotCalculated() {
+  function triggerPriceNotCalculated() {
   
     // This function is called when the income is less than 45,000 kr
     pzl.api.triggerRule({
-      ruleId: '5ef4eca5-753c-4959-ad71-3d7a7db7c559', 
+      ruleId: 'eb1d1fb4-4547-4576-bbbe-5284c7ad88c2', 
       force: true,
       customOutcomeProps: {
         details: {
@@ -61,5 +53,5 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     });
    
-  } */
+  } 
 });
