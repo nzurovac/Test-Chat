@@ -38,5 +38,6 @@ document.addEventListener("DOMContentLoaded", function() {
       }
       }
   });
+  console.log('Trigger Chat Rule applied');
 }
 });
