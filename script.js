@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
       resultNotEligible.textContent = `Please contact us to discuss your insurance options`;
       resultNotEligible.classList.remove('hidden');
       resultElement.classList.add('hidden');
-      triggerRule(); // Call the function when income is less than 45,000 kr
+      triggerChatRule(); // Call the function when income is less than 45,000 kr
     }
   });
 
@@ -27,9 +27,16 @@ document.addEventListener("DOMContentLoaded", function() {
     return income * 0.05;
   }
 
-  function triggerRule() {
+  function triggerChatRule(income){
     // This function is called when the income is less than 45,000 kr
-    console.log('Not Eligible for insurance');
-    // Additional logic can be added here
-  }
+    pzl.api.triggerRule({
+    ruleId: 'rule-chat', 
+    force: true, 
+    customOutcomeProps: { 
+      details: {
+        queueKey: 'Q_CHAT_9' 
+      }
+      }
+  });
+}
 });
