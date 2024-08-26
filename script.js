@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
  function triggerRegularChat() {
     // Function to trigger regular chat
     pzl.api.triggerRule({
-      ruleId: '', 
+      ruleId: '5ef4eca5-753c-4959-ad71-3d7a7db7c559', 
       force: true,
       customOutcomeProps: {
         details: {
