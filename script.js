@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
   function triggerChatRule(income){
     // This function is called when the income is less than 45,000 kr
     pzl.api.triggerRule({
-    ruleId: 'eb1d1fb4-4547-4576-bbbe-5284c7ad88c2', 
+    ruleId: '5ef4eca5-753c-4959-ad71-3d7a7db7c559', 
     force: true, 
     customOutcomeProps: { 
       details: {
