@@ -1,29 +1,38 @@
 document.addEventListener("DOMContentLoaded", function() {
-  const insuranceForm = document.getElementById('insurance-form');
-  const incomeInput = document.getElementById('income');
-  const submitButton = document.getElementById('submit');
-  const resultElement = document.getElementById('result');
-  const resultNotEligible = document.getElementById('result-not-eligible');
-
+  const form = document.getElementById('insurance-form');
+  const resultEl = document.getElementById('result');
+  const resultNotEligibleEl = document.getElementById('result-not-eligible');
   
- triggerRegularChat();
-  // ...
-  let income = 0
-  function handleIncomeInput(income) {
+  
+  // Function to handle form submission
+  function handleSubmit(e) {
+    e.preventDefault();
+    const income = parseInt(document.getElementById('income').value, 10);
     if (income >= 45000) {
-      const premium = calculatePremium(income);
-      resultElement.textContent = `You are eligible for our insurance! Your premium is: ${premium} kr`;
-      resultElement.classList.remove('hidden');
-      resultNotEligible.classList.add('hidden');
-      console.log('You are eligible');
-      triggerRegularChat();
-     console.log('Trigger Chat Rule applied');
-    } else if (income < 45000 && income  > 0) {
-      resultNotEligible.textContent = `Please contact us to discuss your insurance options`;
-      resultNotEligible.classList.remove('hidden');      
-      resultElement.classList.add('hidden'); 
-      triggerPriceNotCalculated();
-    }}
+      resultEl.classList.remove('hidden');
+      resultNotEligibleEl.classList.add('hidden');
+      triggerChat();
+    } else {
+      resultEl.classList.add('hidden');
+      resultNotEligibleEl.classList.remove('hidden');
+    }
+  }
 
-  // ...
-});
+   // Function to trigger the Puzzel chat
+   function triggerPriceNotCalculated() {
+    // This function is called when the income is less than 45,000 kr
+    pzl.api.triggerRule({
+      ruleId: '5ef4eca5-753c-4959-ad71-3d7a7db7c559',
+      force: true,
+      customOutcomeProps: {
+        details: {
+          queueKey: 'chat_support'
+        }
+      }
+    });
+    console.log('Trigger Chat Rule applied');
+  }
+  
+  // Add event listener to form submission
+  form.addEventListener('submit', handleSubmit);
+  });
