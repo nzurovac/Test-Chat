@@ -5,24 +5,14 @@ document.addEventListener("DOMContentLoaded", function() {
   const resultElement = document.getElementById('result');
   const resultNotEligible = document.getElementById('result-not-eligible');
 
-  // Add a CSS class to the chat elements to hide them
-  const regularChatElement = document.getElementById('regular-chat');
-  const priceNotCalculatedChatElement = document.getElementById('price-not-calculated-chat');
-
-  regularChatElement.classList.add('hidden-chat');
-  priceNotCalculatedChatElement.classList.add('hidden-chat');
+  
 
   // ...
 
   function handleIncomeInput(income) {
     if (income < 45000) {
       resultNotEligible.textContent = `Please contact us to discuss your insurance options`;
-      resultNotEligible.classList.remove('hidden');
-      resultElement.classList.add('hidden');
-      // Hide regular chat
-      regularChatElement.classList.add('hidden-chat');
-      // Trigger PriceNotCalculated chat
-      priceNotCalculatedChatElement.classList.remove('hidden-chat');
+      resultNotEligible.classList.remove('hidden');      resultElement.classList.add('hidden');
       triggerPriceNotCalculated();
     } else if (income >= 45000) {
       const premium = calculatePremium(income);
@@ -30,17 +20,13 @@ document.addEventListener("DOMContentLoaded", function() {
       resultElement.classList.remove('hidden');
       resultNotEligible.classList.add('hidden');
       console.log('You are eligible');
-      // Hide PriceNotCalculated chat
-      priceNotCalculatedChatElement.classList.add('hidden-chat');
-      // Show regular chat
-      regularChatElement.classList.remove('hidden-chat');
-      triggerRegularChat();
+      //triggerRegularChat();
     }
   }
 
   // ...
 
-  function triggerRegularChat() {
+ /*  function triggerRegularChat() {
     // Function to trigger regular chat
     pzl.api.triggerRule({
       ruleId: 'eb1d1fb4-4547-4576-bbbe-5284c7ad88c2',
@@ -51,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
       }
     });
-  }
+  } */
 
   function triggerPriceNotCalculated() {
     // This function is called when the income is less than 45,000 kr
