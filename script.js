@@ -5,7 +5,8 @@ document.addEventListener("DOMContentLoaded", function() {
   const resultElement = document.getElementById('result');
   const resultNotEligible = document.getElementById('result-not-eligible');
 
- 
+  // Trigger regular chat by default
+  triggerRegularChat();
 
   submitButton.addEventListener('click', (e) => {
     e.preventDefault();
@@ -24,12 +25,18 @@ document.addEventListener("DOMContentLoaded", function() {
       resultNotEligible.classList.remove('hidden');
       resultElement.classList.add('hidden');
       triggerPriceNotCalculated();
+      // Hide regular chat
+      pzl.api.triggerRule({
+        ruleId: 'eb1d1fb4-4547-4576-bbbe-5284c7ad88c2',
+        force: false
+      });
     } else if (income >= 45000) {
       const premium = calculatePremium(income);
       resultElement.textContent = `You are eligible for our insurance! Your premium is: ${premium} kr`;
       resultElement.classList.remove('hidden');
       resultNotEligible.classList.add('hidden');
       console.log('You are eligible');
+      // Show regular chat
       triggerRegularChat();
     }
   }
