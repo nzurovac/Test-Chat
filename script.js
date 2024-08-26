@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", function() {
   const resultNotEligible = document.getElementById('result-not-eligible');
 
   // Trigger regular chat by default
-  triggerRegularChat();
 
   submitButton.addEventListener('click', (e) => {
     e.preventDefault();
@@ -25,8 +24,9 @@ document.addEventListener("DOMContentLoaded", function() {
       resultNotEligible.classList.remove('hidden');
       resultElement.classList.add('hidden');
       // Hide regular chat
-      pzl.api.hideRule({
-        ruleId: 'eb1d1fb4-4547-4576-bbbe-5284c7ad88c2'
+      pzl.api.triggerRule({
+        ruleId: 'eb1d1fb4-4547-4576-bbbe-5284c7ad88c2',
+        force: false
       });
       // Trigger PriceNotCalculated chat
       triggerPriceNotCalculated();
@@ -37,8 +37,9 @@ document.addEventListener("DOMContentLoaded", function() {
       resultNotEligible.classList.add('hidden');
       console.log('You are eligible');
       // Hide PriceNotCalculated chat
-      pzl.api.hideRule({
-        ruleId: '5ef4eca5-753c-4959-ad71-3d7a7db7c559'
+      pzl.api.triggerRule({
+        ruleId: '5ef4eca5-753c-4959-ad71-3d7a7db7c559',
+        force: false
       });
       // Show regular chat
       triggerRegularChat();
