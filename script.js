@@ -38,6 +38,10 @@ document.addEventListener("DOMContentLoaded", function() {
       console.log('You are eligible');
       // Show regular chat
       triggerRegularChat();
+      pzl.api.triggerRule({
+        ruleId: '5ef4eca5-753c-4959-ad71-3d7a7db7c559',
+        force: false
+      });
     }
   }
 
