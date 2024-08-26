@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const resultEl = document.getElementById('result');
   const resultNotEligibleEl = document.getElementById('result-not-eligible');
   
-  
+  let income = 45000;
   // Function to handle form submission
   function handleSubmit(e) {
     e.preventDefault();
