@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const resultElement = document.getElementById('result');
   const resultNotEligible = document.getElementById('result-not-eligible');
 
-  triggerRegularChat();
+ 
 
   submitButton.addEventListener('click', (e) => {
     e.preventDefault();
@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
       resultElement.classList.remove('hidden');
       resultNotEligible.classList.add('hidden');
       console.log('You are eligible');
+      triggerRegularChat();
     }
   }
 
