@@ -11,10 +11,10 @@ document.addEventListener("DOMContentLoaded", function() {
     if (income >= 45000) {
       resultEl.classList.remove('hidden');
       resultNotEligibleEl.classList.add('hidden');
-      triggerChat();
     } else {
       resultEl.classList.add('hidden');
       resultNotEligibleEl.classList.remove('hidden');
+      triggerPriceNotCalculated();
     }
   }
 
