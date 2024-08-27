@@ -12,10 +12,12 @@ document.addEventListener("DOMContentLoaded", function() {
     if (income >= 45000) {
       resultEl.classList.remove('hidden');
       resultNotEligibleEl.classList.add('hidden');
-      triggerChat();
+      resultEl.textContent = `You are eligible for insurance!`;
+
     } else {
       resultEl.classList.add('hidden');
       resultNotEligibleEl.classList.remove('hidden');
+      resultNotEligibleEl.textContent = `Please contact us to discuss your insurance options`;
       triggerPriceNotCalculated();
     }
   }
@@ -34,20 +36,20 @@ document.addEventListener("DOMContentLoaded", function() {
     });
     console.log('Trigger Chat Rule applied');
   }
-  function triggerChat() {
+  /* function triggerChat() {
     // This function is called when the income is less than 45,000 kr
-    pzl.api.triggerRule({
+    pzl.api.showInteraction({
       ruleId: 'eb1d1fb4-4547-4576-bbbe-5284c7ad88c2',
       force: true,
       customOutcomeProps: {
         details: {
           queueKey: 'chat_support'
-        }
       }
+    }
     });  
     console.log('Start Chat Rule applied');
   }
-  
+   */
   // Add event listener to form submission
   form.addEventListener('submit', handleSubmit);
   });
