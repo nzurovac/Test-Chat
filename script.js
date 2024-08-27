@@ -36,10 +36,10 @@ document.addEventListener("DOMContentLoaded", function() {
     });
     console.log('Trigger Chat Rule applied');
   }
-  /* function triggerChat() {
+  function triggerChat() {
     // This function is called when the income is less than 45,000 kr
-    pzl.api.showInteraction({
-      ruleId: 'eb1d1fb4-4547-4576-bbbe-5284c7ad88c2',
+    pzl.api.triggerRule({
+      ruleId: '1a0927f8-7d7a-43a5-8cad-525561dd3160',
       force: true,
       customOutcomeProps: {
         details: {
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });  
     console.log('Start Chat Rule applied');
   }
-   */
+
   // Add event listener to form submission
   form.addEventListener('submit', handleSubmit);
   });
