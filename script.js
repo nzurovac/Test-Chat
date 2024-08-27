@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
    function triggerPriceNotCalculated() {
     // This function is called when the income is less than 45,000 kr
     pzl.api.triggerRule({
-      ruleId: '5ef4eca5-753c-4959-ad71-3d7a7db7c559',
+      ruleId: '9bfc2416-6601-48af-b271-e273c5a17b74',
       force: true,
       customOutcomeProps: {
         details: {
