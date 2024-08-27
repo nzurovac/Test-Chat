@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
       resultEl.classList.remove('hidden');
       resultNotEligibleEl.classList.add('hidden');
       resultEl.textContent = `You are eligible for insurance!`;
-
+      triggerChat();
     } else {
       resultEl.classList.add('hidden');
       resultNotEligibleEl.classList.remove('hidden');
